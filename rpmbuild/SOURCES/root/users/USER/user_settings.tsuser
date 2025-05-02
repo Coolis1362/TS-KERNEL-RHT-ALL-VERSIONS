@@ -1,5 +1,0 @@
-USER_TYPE = "USER"
-USER_NAME = "USER"
-TYPE = "CLI"
-TYPE = "GUI"
-CONTENTS = "root\users\USER\TEST"
