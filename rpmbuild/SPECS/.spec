@@ -4,7 +4,7 @@ Release: 1%{?dist}
 Summary: TS-KERNEL RHT - Adaptive Red Hat Kernel System
 License: GPLv3+
 URL: https://github.com/Coolis1362/TS-KERNEL-RHT-ALL-VERSIONS
-Source0: ts-kernel-rht-1.0.0.tar.gz
+Source0: root
 ExclusiveArch: x86_64  # Ensures it only builds for AMD64
 
 %description
