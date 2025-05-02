@@ -18,20 +18,9 @@ make
 
 %install
 mkdir -p $RPM_BUILD_ROOT/usr/bin
-mkdir -p $RPM_BUILD_ROOT/usr/lib/ts-kernel-rht
-mkdir -p $RPM_BUILD_ROOT/etc
-mkdir -p $RPM_BUILD_ROOT/var/log/ts-kernel-rht
-mkdir -p $RPM_BUILD_ROOT/usr/share/doc/ts-kernel-rht
-
-install -m 0755 ts-kernel-rht $RPM_BUILD_ROOT/usr/bin/
-install -m 0644 ts-kernel-rht.conf $RPM_BUILD_ROOT/etc/
 
 %files
-/usr/bin/ts-kernel-rht
-/usr/lib/ts-kernel-rht/
-/etc/ts-kernel-rht.conf
-/var/log/ts-kernel-rht/
-/usr/share/doc/ts-kernel-rht/
+/usr/bin
 
 %changelog
 * Tue May 2 2025 Coolis1362 - Initial release of TS-KERNEL RHT 1.0.0
