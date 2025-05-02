@@ -13,9 +13,6 @@ TS-KERNEL RHT is an adaptive kernel designed for Red Hat-based environments.
 %prep
 %setup -q
 
-%build
-make
-
 %install
 install -m 0755 %{_topdir}/tsbuild/SOURCES/ts-kernel-rht.py $RPM_BUILD_ROOT/usr/bin/ts-kernel-rht
 
