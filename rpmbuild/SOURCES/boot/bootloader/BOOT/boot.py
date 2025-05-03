@@ -8,14 +8,15 @@ def printtext():
     user_input = input("PRINT>> ")
     print(user_input)
 
-
+TS_KERNEL_VERSION = "TS-KERNEL RHT 1.0.0 Codename 'Pulse'"
+BOOTLOADER = "BOOT"
 
 def bootos():
     # Simulating a user input scenario
     return input(
         "-------------------------------------------------------"
         "\n- Choose A Number, This Key Will Tell What It Will Do -"
-        "\n- 1 = TS-KERNEL 1.0.1.1 Codename 'Pulse'            -"
+        f"\n- 1 = {TS_KERNEL_VERSION}            -"
         "\n- 2 = Exit                                            -"
         "\n-------------------------------------------------------\n")
 
