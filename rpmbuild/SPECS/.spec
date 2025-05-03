@@ -12,7 +12,7 @@ TS-KERNEL RHT is an adaptive kernel designed for Red Hat-based environments.
 
 %install
 mkdir -p $RPM_BUILD_ROOT/usr/bin
-cp -r %{_topdir}/BUILDROOT/root/ $RPM_BUILD_ROOT/usr/bin/
+cp -r %{_topdir}/BUILDROOT/root/* $RPM_BUILD_ROOT/usr/bin/
 
 %files
-/usr/bin/ts-kernel-rht
+/usr/bin/root
