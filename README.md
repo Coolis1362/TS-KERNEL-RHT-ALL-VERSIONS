@@ -40,10 +40,11 @@ This project contains the RPM packaging and filesystem structure for the `ts-ker
 
 - Some files may have Windows Zone.Identifier metadata; these can be ignored on Linux.
 - The project is intended for advanced users familiar with RPM packaging and Linux system administration.
+- This project was made in openSUSE Leap 15.6 WSL and is compatible with Red Hat-based systems.
 
 ## License
 
-[MIT License](https://github.com/Coolis1362/TS-KERNEL-RHT-ALL-VERSIONS/blob/rht1.0.0/LICENSE/md)
+[MIT License](https://github.com/Coolis1362/TS-KERNEL-RHT-ALL-VERSIONS/blob/rht1.0.0/LICENSE.md)
 
 ## Author
 
