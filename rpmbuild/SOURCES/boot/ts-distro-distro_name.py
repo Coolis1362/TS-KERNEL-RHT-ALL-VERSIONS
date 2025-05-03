@@ -64,7 +64,7 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
     KERNEL_VERSION = "TS-KERNEL RHT 1.0.0 Codename 'Pulse'" 
     DISTRO_VERSION = "version name" # Replace This with Version name Of your Distor e.g TS-DISTRO MAIN >>1.0.1pa2<< (The >> and << Are Pointing to A Version Number As A Version number)
     GITHUB_RESPOS_URL = "https://github.com/Coolis1362/"
-    TSCLI_VERSION = "1.0.1.1"
+    TSCLI_VERSION = "RHT 1.0.0"
     current_folder = os.path.dirname(os.path.abspath(__file__))
     current_terminal_folder = os.getcwd()
     print(f"Welcome To {DISTRO_NAME_PREFIX} {DISTRO_NAME} KERNEL VERSION: {KERNEL_VERSION} DISTRO VERSION: {DISTRO_VERSION}!")
