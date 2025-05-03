@@ -15,4 +15,4 @@ mkdir -p $RPM_BUILD_ROOT/usr/bin
 cp -r root/* $RPM_BUILD_ROOT/usr/bin/
 
 %files
-/usr/bin/root
+/usr/bin/*
