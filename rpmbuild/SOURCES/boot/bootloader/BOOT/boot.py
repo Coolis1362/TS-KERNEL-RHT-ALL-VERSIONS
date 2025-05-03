@@ -35,7 +35,6 @@ def boot():
         print("clear - Clear the console")
         print("whoami - Show the current user")
         print("tskerlan - start The TS-KERNEL-LANAGUAGE Interpiler")
-        print("tsdesktop - start TS-DESKTOP and end cmd.exe")
         print("switch user --USER - Switch to user USER")
         print("shutdown --host_os - Shutdown Windows")
         print("ts-package - starts ts-package")
