@@ -21,5 +21,6 @@ install -m 0755 %{_topdir}/SOURCES/ts-kernel-rht.py $RPM_BUILD_ROOT/usr/bin/ts-k
 /usr/bin/ts-kernel-rht
 
 %changelog
-* Tue May 02 2025 Coolis1362 <tadeotherocketbuilder@outlook.com> - 1.0.0-1
+* Mon May 01 2025 Coolis1362 <tadeotherocketbuilder@outlook.com> - 1.0.0-1
 - Initial release of TS-KERNEL RHT 1.0.0
+
