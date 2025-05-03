@@ -1,5 +1,5 @@
 Name: ts-kernel-rht
-Version: 1.0.0
+Version: 1.0.0.1
 Release: 1%{?dist}
 Summary: TS-KERNEL RHT - Adaptive Red Hat Kernel System
 License: GPLv3+
