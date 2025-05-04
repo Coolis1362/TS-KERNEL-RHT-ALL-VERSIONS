@@ -8,15 +8,22 @@ def printtext():
     user_input = input("PRINT>> ")
     print(user_input)
 
-TS_KERNEL_VERSION = "TS-KERNEL RHT 1.0.0 Codename 'Pulse'"
-BOOTLOADER = "BOOT"
+# Set epoch using UTC, since your system isn't detecting named time zones
+epoch_start = datetime.datetime(2025, 4, 9, 0, 0, 0, tzinfo=datetime.timezone.utc)
+
+# Function to get elapsed seconds
+def get_seconds_since_epoch():
+    now = datetime.datetime.now(datetime.timezone.utc)  # Use UTC to ensure compatibility
+    elapsed_seconds = (now - epoch_start).total_seconds()
+    return int(elapsed_seconds)
+
 
 def bootos():
     # Simulating a user input scenario
     return input(
         "-------------------------------------------------------"
         "\n- Choose A Number, This Key Will Tell What It Will Do -"
-        f"\n- 1 = {TS_KERNEL_VERSION}            -"
+        "\n- 1 = TS-KERNEL 1.0.1.1 Codename 'Pulse'              -"
         "\n- 2 = Exit                                            -"
         "\n-------------------------------------------------------\n")
 
@@ -35,6 +42,7 @@ def boot():
         print("clear - Clear the console")
         print("whoami - Show the current user")
         print("tskerlan - start The TS-KERNEL-LANAGUAGE Interpiler")
+        print("tsdesktop - start TS-DESKTOP and end cmd.exe")
         print("switch user --USER - Switch to user USER")
         print("shutdown --host_os - Shutdown Windows")
         print("ts-package - starts ts-package")

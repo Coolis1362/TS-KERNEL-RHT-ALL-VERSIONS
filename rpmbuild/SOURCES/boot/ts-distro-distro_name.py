@@ -9,6 +9,15 @@ import datetime
 from python.python import python
 import webbrowser
 
+# Set epoch using UTC, since your system isn't detecting named time zones
+epoch_start = datetime.datetime(2025, 4, 9, 0, 0, 0, tzinfo=datetime.timezone.utc)
+
+# Function to get elapsed seconds
+def get_seconds_since_epoch():
+    now = datetime.datetime.now(datetime.timezone.utc)  # Use UTC to ensure compatibility
+    elapsed_seconds = (now - epoch_start).total_seconds()
+    return int(elapsed_seconds)
+
 import os
 from datetime import datetime
 
@@ -61,10 +70,10 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
     MAIN_USER_NAME = "ADMIN_USER"
     DISTRO_NAME_PREFIX = "TS-DISTRO"
     DISTRO_NAME = "distro_name" # Replace distro_name with the name of your distro
-    KERNEL_VERSION = "TS-KERNEL RHT 1.0.0 Codename 'Pulse'" 
+    KERNEL_VERSION = "1.0.1.1 Codename 'Pulse'" 
     DISTRO_VERSION = "version name" # Replace This with Version name Of your Distor e.g TS-DISTRO MAIN >>1.0.1pa2<< (The >> and << Are Pointing to A Version Number As A Version number)
     GITHUB_RESPOS_URL = "https://github.com/Coolis1362/"
-    TSCLI_VERSION = "RHT 1.0.0"
+    TSCLI_VERSION = "1.0.1.1"
     current_folder = os.path.dirname(os.path.abspath(__file__))
     current_terminal_folder = os.getcwd()
     print(f"Welcome To {DISTRO_NAME_PREFIX} {DISTRO_NAME} KERNEL VERSION: {KERNEL_VERSION} DISTRO VERSION: {DISTRO_VERSION}!")
@@ -121,6 +130,7 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
             print("git - Same As The git Command In Other Terminals And Shells")
             print("gh - Same As The gh Command In Other Terminals And Shells")
             print("ls - List files in the current directory")
+            print("time --sys - Show the current system time")
             print("add your commands here") # Replace It With Your Comamnds and On
 
         elif tsdistrocommand == "exit":
@@ -234,6 +244,9 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
         elif tsdistrocommand == "ls":
             print(f"IN {current_terminal_folder}:")
             print(os.system("dir" if os.name == "nt" else "ls"))
+
+        elif tsdistrocommand == "time --sys":
+            print(get_seconds_since_epoch())
 
         else:
          print(f"tscli: {tsdistrocommand}: Command Not Found In Code.")
