@@ -41,7 +41,7 @@ This project contains the RPM packaging and filesystem structure for the `ts-ker
 - Some files may have Windows Zone.Identifier metadata; these can be ignored on Linux.
 - The project is intended for advanced users familiar with RPM packaging and Linux system administration.
 - This project was made in openSUSE Leap 15.6 WSL and is compatible with Red Hat-based systems.
-- the project may contain  bugs, if they are bugs in the package, copy and paste all folders and files in `rpmbuild/SOURCES/` and `rpmbuild/SPECS` so you make the distro.
+- the project may contain  bugs, if they are bugs in the package, copy and paste all folders and files in `rpmbuild/SOURCES/` and `rpmbuild/SPECS` so you can make the distro.
 
 ## License
 
