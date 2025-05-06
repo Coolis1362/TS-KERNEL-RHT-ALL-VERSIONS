@@ -3,7 +3,6 @@ import datetime
 import sys
 import webbrowser
 from datetime import datetime, timezone
-from zoneinfo import ZoneInfo
 
 # Set epoch using UTC, since your system isn't detecting named time zones
 epoch_start = datetime(2025, 4, 9, 0, 0, 0, tzinfo=timezone.utc)
