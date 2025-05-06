@@ -10,7 +10,15 @@ from python.python import python
 import webbrowser
 
 import os
-from datetime import datetime
+
+# Set epoch using UTC, since your system isn't detecting named time zones
+epoch_start = datetime.datetime(2025, 4, 9, 0, 0, 0, tzinfo=datetime.timezone.utc)
+
+# Function to get elapsed seconds
+def get_seconds_since_epoch():
+    now = datetime.datetime.now(datetime.timezone.utc)  # Use UTC to ensure compatibility
+    elapsed_seconds = (now - epoch_start).total_seconds()
+    return int(elapsed_seconds)
 
 def fetch_today_news(repo_url):
     try:
@@ -107,8 +115,9 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
             print("clear - Clear the console")
             print("whoami - Show the current user")
             print("tskerlan - start The TS-KERNEL-LANAGUAGE Interpiler")
+            print("tsdesktop - start TS-DESKTOP and end cmd.exe")
             print("switch user --USER - Switch to user USER")
-            print("shutdown --host_os - Shutdown Linux")
+            print("shutdown --host_os - Shutdown Windows")
             print("ts-package - starts ts-package")
             print("time - Tells The Time")
             print("admindo - If A Linux User Is Seeing this, It's the Same As sudo")
@@ -121,15 +130,17 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
             print("git - Same As The git Command In Other Terminals And Shells")
             print("gh - Same As The gh Command In Other Terminals And Shells")
             print("ls - List files in the current directory")
+            print("time --sys - Show The System Time")
             print("add your commands here") # Replace It With Your Comamnds and On
 
         elif tsdistrocommand == "exit":
             print("Exiting...")
             time.sleep(1)
-            sys.exit(0)
+            os.system("taskkill /F /IM cmd.exe")
+            os._exit(0)
 
         elif tsdistrocommand == "clear":
-            os.system("clear")
+            os.system("cls" if os.name == "nt" else "clear")
 
         elif tsdistrocommand == "whoami":
             print(f"Current user: {MAIN_USER_NAME}")
@@ -139,7 +150,15 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
                 tskerlan()
             except Exception as e:
               print(f"Error 305: An issue occurred while executing 'tskerlan': {e}")
-
+        elif tsdistrocommand == "tsdesktop":
+            try:
+                os.chdir("C:\\Users\\<Username>\\<NestedFolder>\\Desktop\\TS-KERNEL VERSIONS\\1.x.x\\1.0.x\\TS-KERNEL 1.0.1\\Pre-alpha\\pa2\\root\\ts-desktop\\1.x.x\\1.0.x\\1.0.0\\")
+                os.system("ts-desktop100")
+                time.sleep(1)
+                os.system("taskkill /F /IM cmd.exe")
+                os._exit(0)
+            except Exception as e:
+                print(f"ERROR 758: ERROR FOUND ERROR: {e}")
         elif tsdistrocommand == "switch user --USER":
             MAIN_USER_NAME = "USER"
         
@@ -235,6 +254,9 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
             print(f"IN {current_terminal_folder}:")
             print(os.system("dir" if os.name == "nt" else "ls"))
 
+        elif tsdistrocommand == "time --sys":
+            print(get_seconds_since_epoch()) 
+
         else:
          print(f"tscli: {tsdistrocommand}: Command Not Found In Code.")
 
@@ -243,7 +265,7 @@ def put_distro_name_here(): # Replace put_distro_name_here with the name of your
 if __name__ == "__main__": # DON'T REMOVE THIS LINE
     if bootloader.BOOT.boot.bootos() == "1":
         if boot():
-            os.system("clear")
+            os.system("cls")
             put_distro_name_here() # REPLACE THIS LINE WITH THE NAME OF THE MAIN FUNCTION
         else:
          print("BOOT Failed")
